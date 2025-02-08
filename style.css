@@ -38,6 +38,7 @@ header nav .navc a {color: rgb(23, 54, 83); text-decoration: none; font-weight: 
 
 header nav
 {
+  display: flex;
   position:fixed;
   top: 0;
   left: 0;
@@ -102,6 +103,7 @@ header ul li div a:hover ~ .form__bar{
   left: 0;
   right: 0;
   width: 100%;
+  color: inherit;
 }
 
 .form__bar {
@@ -269,3 +271,40 @@ section {
 .prev-btn:hover, .next-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+
+/*------------------------------- A PROPOS DE NOUS -------------------------------*/
+.aboutUs-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+.relative
+{
+  position: relative;
+}
+
+.relative img
+{
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20rem;
+  box-shadow: 0 4px 8px rgb(70, 0, 0);
+
+}
+/*  .relative ,.first_rounded 
+  {
+    width: 50px;
+    height: 50px;
+    border-radius: 20rem;
+    overflow: hidden;
+    background-color:#E6AC5D;
+    position: absolute;
+  }  */
+
+
+/*------------------------------- RESPONSIVITE A PROPOS DE NOUS -------------------------------*/
