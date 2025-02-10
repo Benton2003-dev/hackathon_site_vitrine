@@ -189,122 +189,357 @@ header .conteneur_produit .produit h3
 
 /*----------------------------------------------------------------------------*/
 
-/* Style global */
-section {
-  text-align: center;
-  padding: 20px;
-}
+/* Style global des catégories. */
 
-/* Conteneur du slider */
-.slider-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.carousel-container {
   position: relative;
-  width: 90%;
+  width: 100%;
+  max-width: 1200px;
   margin: auto;
+  overflow: hidden;
+  padding: 30px;
 }
 
-/* Zone de défilement */
-.slider {
+.carousel-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #BC6535;
+  font-family: cursive;
+}
+
+.carousel {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  gap: 10px;
-  padding: 10px;
-  width: 80%;
+  gap: 15px;
+  transition: transform 0.5s ease-in-out;
 }
 
-/* Masquer la barre de défilement */
-.slider::-webkit-scrollbar {
-  display: none;
-}
-
-/* Chaque slide */
-.slide {
-  flex: 0 0 250px; /* Largeur de chaque slide */
-  height: 300px; /* Hauteur */
-  border-radius: 15px;
+.carousel-item {
+  min-width: 300px;
+  height: 400px;
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  scroll-snap-align: center;
   position: relative;
-  transition: transform 0.3s;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Effet au survol */
-.slide:hover {
+.carousel-item:hover {
   transform: scale(1.05);
+  z-index: 2;
 }
 
-/* Titre des catégories */
-.slide-title {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 18px;
+.carousel-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease-in-out;
 }
 
-/* Boutons de navigation */
-.prev-btn, .next-btn {
-  background-color: rgba(0, 0, 0, 0.5);
+.carousel-item .title {
+  position: absolute;
+  bottom: 30px;
+  right: 100px;
   color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 24px;
+  font-size: 1.5em;
+  font-weight: bold;
+  z-index: 3;
+  
+}
+
+.carousel-item:hover .overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+.carousel-nav {
   position: absolute;
   top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   transform: translateY(-50%);
-  border-radius: 50%;
 }
 
-.prev-btn { left: 5px; }
-.next-btn { right: 5px; }
+.carousel-nav button {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
 
-/* Effet au survol des boutons */
-.prev-btn:hover, .next-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.carousel-nav button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dégradés latéraux */
+.gradient-left,
+.gradient-right {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gradient-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), transparent);
+}
+
+.gradient-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
 }
 
 
 /*------------------------------- A PROPOS DE NOUS -------------------------------*/
 .aboutUs-content {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-}
-.relative
-{
-  position: relative;
+  justify-content: center;
+  gap: 80px;
+  padding: 100px 150px;
+  clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 100%);
+  background-color:#EED0C0;
 }
 
-.relative img
-{
-  width: 400px;
-  height: 400px;
+
+.aboutUs-image-container {
+  max-width: 400px;
+}
+
+.aboutUs-image {
+  width: 450px;
+  height: 450px;
+  border-radius: 100%;
   object-fit: cover;
-  border-radius: 20rem;
-  box-shadow: 0 4px 8px rgb(70, 0, 0);
-
+  box-shadow: #BC6535 5px 5px 15px;
 }
-/*  .relative ,.first_rounded 
-  {
+
+.aboutUs-text-container {
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  gap: 30px;
+}
+
+.aboutUs-title {
+  font-family: cursive;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color:#BC6535;
+}
+
+.aboutUs-description {
+  font-size: 16px;
+ 
+  margin-bottom: 20px;
+  color: black;
+  text-justify: auto;
+}
+
+.aboutUs-button {
+  width: fit-content;
+  padding: 12px 24px;
+  background-color: #BC6535;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.aboutUs-button:hover {
+  background-color: #eb5606;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .aboutUs-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .aboutUs-text-container {
+    text-align: center;
+    align-items: center;
+  }
+  .aboutUs-button {
+    margin: 0 auto;
+  }
+}
+/* .first_rounded {
     width: 50px;
     height: 50px;
     border-radius: 20rem;
     overflow: hidden;
     background-color:#E6AC5D;
     position: absolute;
-  }  */
+    opacity: 0,5;
+  }   */
 
 
 /*------------------------------- RESPONSIVITE A PROPOS DE NOUS -------------------------------*/
+
+/*------------------------------- NEWSLETTER -------------------------------*/
+
+.newsletter-tofidoux {
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+  background-image: url('images/bg-confiserie.jpg'); opacity: 0.6;
+}
+
+.newsletter-tofidoux h3 {
+  font-family:cursive;
+  font-size: 24px;
+  color: #BC6535;
+  font-weight: bold;
+}
+
+.newsletter-tofidoux p {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.newsletter-tofidoux form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter-tofidoux input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.newsletter-tofidoux button {
+  padding: 12px 20px;
+  background-color: #BC6535;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+/*------------------------------- FOOTER -------------------------------*/
+
+.site-footer {
+  background-color:black;
+  color: white;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  border-top: 3px solid #444;
+}
+
+.newsletter-section {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 40px;
+}
+
+.newsletter-section h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.newsletter-form input {
+  padding: 12px 20px;
+  width: 300px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.newsletter-form button {
+  padding: 12px 25px;
+  background-color: #BC6535;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #BC6535;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 15px;
+}
+
+.footer-column h3 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .newsletter-form input {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .newsletter-form button {
+      width: 100%;
+  }
+
+  .footer-column {
+      flex: 100%;
+      text-align: center;
+  }
+}

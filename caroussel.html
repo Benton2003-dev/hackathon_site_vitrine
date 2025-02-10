@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Rotating Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #2a2a2a;
+            perspective: 1000px;
+            overflow: hidden;
+        }
+
+        .gallery-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            animation: rotate 20s linear infinite;
+        }
+
+        .gallery-container:hover {
+            animation-play-state: paused;
+        }
+
+        .gallery-item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            border: 2px solid white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            transition: transform 0.5s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        /* Position images in 3D space */
+        .gallery-item:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+        .gallery-item:nth-child(2) { transform: rotateY(60deg) translateZ(400px); }
+        .gallery-item:nth-child(3) { transform: rotateY(120deg) translateZ(400px); }
+        .gallery-item:nth-child(4) { transform: rotateY(180deg) translateZ(400px); }
+        .gallery-item:nth-child(5) { transform: rotateY(240deg) translateZ(400px); }
+        .gallery-item:nth-child(6) { transform: rotateY(300deg) translateZ(400px); }
+
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <div class="gallery-item"><img src="images/10.jpg" alt=""></div>
+        <div class="gallery-item"><img src="images/11.jpg" alt=""></div>
+        <div class="gallery-item"><img src="images/12.jpg" alt=""></div>
+        <div class="gallery-item"><img src="images/13.jpg" alt=""></div>
+        <div class="gallery-item"><img src="images/14.jpg" alt=""></div>
+        <div class="gallery-item"><img src="images/30.jpg" alt=""></div>
+    </div>
+
+    <script>
+        // Add interactive rotation on mouse move
+        const gallery = document.querySelector('.gallery-container');
+        let rotateY = 0;
+        let rotateX = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            const sensitivity = 0.3;
+            rotateY = (e.clientX - window.innerWidth/2) * sensitivity;
+            rotateX = (e.clientY - window.innerHeight/2) * sensitivity;
+            
+            gallery.style.transform = `rotateY(${rotateY}deg) rotateX(${-rotateX}deg)`;
+        });
+
+        // Reset rotation on mouse leave
+        document.addEventListener('mouseleave', () => {
+            gallery.style.transform = 'rotateY(0deg) rotateX(0deg)';
+        });
+
+        // Click to zoom effect
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.style.transform = item.style.transform + ' translateZ(100px)';
+                setTimeout(() => {
+                    item.style.transform = item.style.transform.replace(' translateZ(100px)', '');
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
