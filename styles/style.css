@@ -1,0 +1,494 @@
+*
+{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #FFD93D;
+    --accent-color: #6B4226;
+    --light-cream: #FFF5E6;
+    --dark-brown: #3D2C2E;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--light-cream);
+    /* background: #3D2C2E; */
+    color: var(--dark-brown);
+}
+
+/*--------------------------------- Banner------------------------------- */
+.banner-carousel {
+  margin-top: 25px;
+  position: relative;
+  width: auto;
+  height: 600px;
+  overflow: hidden;
+ 
+  margin-bottom: 50px;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  /* Les slides sont invisibles par défaut */
+  transition: opacity 1s ease-in-out;
+  /* Animation de fondu */
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  /* Le slide actif est visible */
+}
+
+.carousel-slide:first-child {
+  display: block;
+  /* Le premier slide est visible par défaut */
+}
+
+
+/*------------------------------------DESCRIPTION----------------------------------------*/
+
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 100px 150px;
+}
+
+.description p {
+  font-size: 18px;
+  text-align: center;
+  color: black;
+}
+
+
+
+
+
+
+/*------------------------------------CATEGORIES----------------------------------------*/
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 30px;
+}
+
+
+.carousel-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #BC6535;
+  font-family: cursive;
+}
+
+.carousel {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto; /* Permet le défilement horizontal */
+  scroll-behavior: smooth; /* Défilement fluide */
+  scroll-snap-type: x mandatory; /* Alignement des slides */
+  padding-bottom: 20px; /* Espace pour les boutons */
+}
+
+.carousel-item {
+  min-width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 0px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  scroll-snap-align: start; /* Alignement des slides */
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.carousel-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease-in-out;
+}
+
+.carousel-item .title {
+  position: absolute;
+  bottom: 10px;
+  left: 30%;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  z-index: 3;
+}
+
+.carousel-item:hover .overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Boutons de navigation */
+.carousel-nav {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  z-index: 4;
+}
+
+.carousel-button {
+  background-color: #F2ECF0;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.carousel-button:hover {
+  background: #BC6535;
+  color: white;
+}
+
+/* Masquer la barre de défilement */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel {
+  -ms-overflow-style: none; /* IE et Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/*------------------------------------CATEGORIES----------------------------------------*/
+
+
+/*------------------------------- A PROPOS DE NOUS -------------------------------*/
+.aboutUs-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  padding: 100px 150px;
+  clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 100%);
+  position: relative;
+  background-color: #EED0C0;
+}
+
+
+.aboutUs-image-container {
+  max-width: 400px;
+}
+
+.aboutUs-image {
+  width: 450px;
+  height: 450px;
+  border-radius: 100%;
+  object-fit: cover;
+  box-shadow: #BC6535 5px 5px 15px;
+  border: 5px solid white;
+}
+
+.aboutUs-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  gap: 30px;
+}
+
+.aboutUs-title {
+  font-family: cursive;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color:#BC6535;
+}
+
+.aboutUs-description {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: black;
+  text-justify: auto;
+  text-align: justify;
+}
+
+.aboutUs-button{
+  width: fit-content;
+  padding: 12px 24px;
+  background-color: #BC6535;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.aboutUs-button a {
+  text-decoration: none;
+  color: #F2ECF0;
+}
+
+.aboutUs-button:hover {
+  background-color: #eb5606;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .aboutUs-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .aboutUs-text-container {
+    text-align: center;
+    align-items: center;
+  }
+  .aboutUs-button {
+    margin: 0 auto;
+  }
+}
+
+/*------------------------------ SHOP -------------------------------*/
+.shop-section {
+    background-color: #fff8e1;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    color: #c87e4f;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.shop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.shop-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+
+.shop-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.shop-item h3 {
+    color: #c87e4f;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.shop-item p {
+    color: #555;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .shop-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/*------------------------------- Histoire -------------------------------*/
+
+.history-section {
+    background-color: #f8f4e3;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px;
+}
+
+.history-content {
+    flex: 1 1 50%;
+    max-width: 500px;
+}
+
+.history-content h2 {
+    font-size: 2.5rem;
+    color: #c87e4f;
+    margin-bottom: 20px;
+}
+
+.history-content p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.history-image {
+    flex: 1 1 50%;
+    max-width: 500px;
+}
+
+.history-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+
+
+/* --------------------------------------------------------------- */
+
+/*------------------------------- VIDEO -------------------------------*/
+
+
+
+.video-container {
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------------------------Avis-------------------------------  */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #E6AC5D, #BC6535);
+}
+ */
+.avis-container {
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #E6AC5D, #BC6535);
+}
+
+/* Animation d’apparition */
+.avis-card {
+    background: #F2ECF0;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+/* Animation au survol */
+.avis-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+} 
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+.avis-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #BC6535;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-weight: 600;
+    color: #BC6535;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.stars {
+    font-size: 20px;
+    color: #E6AC5D;
+}

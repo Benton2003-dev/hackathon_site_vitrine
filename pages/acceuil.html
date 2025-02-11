@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="stylesheet" href="/styles/general.css">
+  <link rel="stylesheet" href="bootstrap.min.css" />
+
+  <title>Tôfidoux_bonbon au caramel</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+ <header>
+    <div class="container">
+      <nav>
+        <div class="nav">
+          <div>
+            <a href="/">
+              <img src="/images/LOGO_TOFIDOUX.png" alt="logo_Tôfidoux" width="250" height="90">
+            </a>
+          </div>
+
+          <div>
+            <ul class="navc">
+              <li>
+                <div>
+                  <a href="acceuil.html">Accueil</a>
+                  <span class="form__bar"></span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="#">Boutique</a>
+                  <span class="form__bar"></span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="#">Nos produits</a>
+                  <span class="form__bar"></span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="catalogue.html">Actualités</a>
+                  <span class="form__bar"></span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="/pages/references.html">Références</a>
+                  <span class="form__bar"></span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="histoire.html">Notre histoire</a>
+                  <span class="form__bar"></span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="contact.html">Contact</a>
+                  <span class="form__bar"></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="icones">
+            <img src="/images/panier_tôfi.png" alt="" width="80" height="80" id="panier_tôfi">
+            <img src="/images/menu_tôfi.png" alt="" width="80" height="80" id="menu_tôfi">
+          </div>
+
+        </div>
+      </nav>
+    </div>
+
+    <div class="conteneur_produit">
+
+      <div class="produit">
+        <img src="/images/IMG_3697.png" alt="produit" width="80" height="80">
+        <div class="details">
+          <h3>Nom</h3>
+          <div class="prix">1000
+            <div class="devise">XOF</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="produit">
+        <img src="/images/IMG_3697.png" alt="produit" width="80" height="80">
+        <div class="details">
+          <h3>Nom</h3>
+          <div class="prix">1000
+            <div class="devise">XOF</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="produit">
+        <img src="/images/IMG_3697.png" alt="produit" width="80" height="80">
+        <div class="details">
+          <h3>Nom</h3>
+          <div class="prix">1000
+            <div class="devise">XOF</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="produit">
+        <img src="/images/IMG_3697.png" alt="produit" width="80" height="80">
+        <div class="details">
+          <h3>Nom</h3>
+          <div class="prix">1000
+            <div class="devise">XOF</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header> 
+
+<!--   <header>
+    <div class="container">
+        <nav>
+            <div class="nav">
+                <div>
+                    <a href="/">
+                        <img src="/images/LOGO_TOFIDOUX.png" alt="logo_Tôfidoux" width="250" height="90">
+                    </a>
+                </div>
+
+                <div>
+                    <ul class="navc">
+                        <li><a href="acceuil.html">Accueil</a></li>
+                        <li class="dropdown-container">
+                            <a href="#">Boutique ▼</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Nos Produits</a></li>
+                                <li><a href="catalogue.html">Actualités</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/pages/references.html">Références</a></li>
+                        <li><a href="histoire.html">Notre histoire</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Icônes Panier & Menu --
+                <div class="icones">
+                    <img src="/images/panier_tôfi.png" alt="Panier" width="50" height="50" id="panier_icon">
+                    <img src="/images/menu_tôfi.png" alt="Menu" width="50" height="50">
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Panier caché --
+    <div id="panier" class="panier">
+        <div class="panier-header">
+            <h3>Votre Panier</h3>
+            <button id="fermer_panier">X</button>
+        </div>
+        <div class="panier-contenu">
+            <p>Aucun produit pour l’instant.</p>
+        </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const panierIcon = document.getElementById("panier_icon");
+          const panier = document.getElementById("panier");
+          const fermerPanier = document.getElementById("fermer_panier");
+      
+          // Ouvrir le panier
+          panierIcon.addEventListener("click", function () {
+              panier.classList.toggle("ouvert");
+          });
+      
+          // Fermer le panier
+          fermerPanier.addEventListener("click", function () {
+              panier.classList.remove("ouvert");
+          });
+      
+          // Fermer le panier si on clique en dehors
+          document.addEventListener("click", function (event) {
+              if (!panier.contains(event.target) && event.target !== panierIcon) {
+                  panier.classList.remove("ouvert");
+              }
+          });
+      });
+      </script>
+      
+
+</header> -->
+
+  <!-- FIN HEADER -->
+
+
+  <!-- MAIN BODY -->
+
+  <main>
+    <!-- Banner -->
+    <div class="banner-carousel">
+      <div class="carousel-slide" style="background-image: url('/images/Image54.jpg');"></div>
+      <div class="carousel-slide" style="background-image: url('/images/IMG_3700.png');"></div>
+      <div class="carousel-slide" style="background-image: url('/images/IMG_3693.png');"></div>
+    </div>
+
+    <script>
+      let bannerIndex = 0;
+      const bannerSlides = document.querySelectorAll('.carousel-slide');
+
+      function showBannerSlide(index) {
+        // Masquer tous les slides
+        bannerSlides.forEach((slide) => {
+          slide.classList.remove('active');
+        });
+
+        // Afficher le slide actif
+        bannerSlides[index].classList.add('active');
+      }
+
+      function moveBanner(direction) {
+        bannerIndex = (bannerIndex + direction + bannerSlides.length) % bannerSlides.length;
+        showBannerSlide(bannerIndex);
+      }
+
+      // Défilement automatique
+      function startAutoSlide() {
+        setInterval(() => {
+          moveBanner(1); // Défile vers la droite
+        }, 3000); // Changez 3000 pour ajuster l'intervalle (en millisecondes)
+      }
+
+      // Initialisation
+      showBannerSlide(bannerIndex); // Affiche le premier slide
+      startAutoSlide(); // Démarre le défilement automatique
+    </script>
+
+
+
+    <!------------------------DESCRIPTION---------------------------------------->
+
+    <section>
+      <div class="description">
+        <h2> TÔFIDOUX : Une Explosion de Douceur à Chaque Bouchée !</h2>
+        <p>
+          TÔFIDOUX, ce n’est pas juste une marque, c’est un univers où la gourmandise rime avec tendresse ! Plongez dans un monde sucré où chaque bonbon est conçu avec passion par de véritables artisans confiseurs, pour émerveiller aussi bien les petits que les grands.
+
+Que vous ayez envie d’une douceur réconfortante ou d’une explosion de saveurs inoubliable, laissez-vous emporter par l’expérience TÔFIDOUX… Un voyage sucré qui promet bonheur et plaisir à chaque instant ! ✨🍭
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Section Catégories -->
+
+    <section>
+      <div class="carousel-container">
+        <h2 style="text-align: center; font-size: 30px; color: #BC6535;">Le coin gourmand</h2>
+        <div class="carousel">
+          <div class="carousel-item" style="background-image: url('/images/IMG_3634.png');">
+            <div class="overlay"></div>
+            <div class="title">Dragées</div>
+          </div>
+          <div class="carousel-item" style="background-image: url('/images/IMG_3674.png');">
+            <div class="overlay"></div>
+            <div class="title">TôfiPOP</div>
+          </div>
+          <div class="carousel-item" style="background-image: url('/images/IMG_3645.png');">
+            <div class="overlay"></div>
+            <div class="title">Babeluttes</div>
+          </div>
+          <div class="carousel-item" style="background-image: url('/images/IMG_3663.png');">
+            <div class="overlay"></div>
+            <div class="title">Papillotes</div>
+          </div>
+          <div class="carousel-item" style="background-image: url('/images/IMG_3700.png');">
+            <div class="overlay"></div>
+            <div class="title">TôfiBLANC</div>
+          </div>
+          <div class="carousel-item" style="background-image: url('/images/IMG_3693.png');">
+            <div class="overlay"></div>
+            <div class="title">TôfiFUN</div>
+          </div>
+          <div class="carousel-item" style="background-image: url('/images/IMG_3670.png');">
+            <div class="overlay"></div>
+            <div class="title">TôfiTABLETTE</div>
+          </div>
+        </div>
+
+        <!-- Boutons de navigation -->
+        <div class="carousel-nav">
+          <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+          <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+      </div>
+
+      <script>
+        let currentIndex = 0;
+        const carousel = document.querySelector(".carousel");
+        const carouselItems = document.querySelectorAll(".carousel-item");
+        const itemWidth = carouselItems[0].offsetWidth + 15; // Largeur de l'item + gap
+
+        function moveCarousel(direction) {
+          const maxIndex = carouselItems.length - 1;
+          currentIndex = Math.max(0, Math.min(currentIndex + direction, maxIndex));
+
+          // Défilement fluide
+          carousel.scrollTo({
+            left: currentIndex * itemWidth,
+            behavior: "smooth",
+          });
+        }
+
+        // Gestion du défilement manuel
+        carousel.addEventListener("scroll", () => {
+          currentIndex = Math.round(carousel.scrollLeft / itemWidth);
+        });
+      </script>
+    </section>
+
+    <!-- -----------------------Histoire---------------------------------------- -->
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita non
+      pariatur, dolore praesentium tempore laudantium iste, ipsa error in
+      distinctio itaque velit harum quaerat doloremque amet facilis neque
+      excepturi nemo. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Labore earum consequuntur, deserunt ut obcaecati saepe corrupti voluptas
+      sed atque, dolore alias sapiente fugit non pariatur repellendus
+      doloremque eaque aliquid ab! Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Harum in id, iusto cupiditate sapiente accusamus cum
+      reiciendis animi numquam. Reiciendis perferendis necessitatibus quisquam
+      accusantium harum et deleniti neque officiis maiores! Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Voluptatum distinctio sint, totam
+      doloribus labore pariatur magnam id quidem, cupiditate eum, itaque
+      repellendus dignissimos dicta voluptatibus necessitatibus. Laudantium,
+      eius quibusdam? Libero. Lorem ipsum dolor sit amet consectetur,
+      adipisicing elit. Expedita incidunt quaerat sequi, deleniti ut nostrum,
+      dicta eaque blanditiis aperiam laboriosam corporis est vel, architecto
+      suscipit soluta dolorem at autem voluptatum. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Tenetur nobis, assumenda omnis deleniti
+      perferendis minima nulla quae aut cupiditate natus. Et iste veritatis
+      non minus quod quos esse sint veniam! Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Porro, aliquam facilis? Aspernatur placeat
+      repellendus facere! Nemo iste, saepe similique suscipit et deleniti,
+      error perspiciatis inventore nulla minima quos facere laboriosam. Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Et laborum similique
+      quod modi vero, aspernatur excepturi rerum molestiae porro voluptatibus.
+      Tempore fuga repellendus necessitatibus optio consectetur facilis saepe
+      molestias inventore!
+    </p>
+
+    <!-- -------------------------Section A propos--------------------------->
+
+    <div class="aboutUs-content">
+
+      <div class="aboutUs-image-container">
+        <img alt="about-us-image" src="/images/IMG_3659.png" class="aboutUs-image" />
+      </div>
+      <div class="aboutUs-text-container">
+        <h3 class="aboutUs-title">À Propos de Nous</h3>
+        <p class="aboutUs-description">
+          <strong style="color: #bc6535;"> Tôfidoux</strong> est une marque de confiserie spécialisée dans la
+          fabrication de bonbons au lait caramélisé sous diverses formes et saveurs authentiques. Nous vous offrons un
+          large choix de douceurs fabriquées avec soin, inspirées du terroir et conçues pour ravir les amateurs de
+          sucreries.Grâce à notre boutique en ligne, profitez de nos délices en toute simplicité !
+          Commandez vos bonbons préférés et faites-vous livrer directement chez vous ou en point relais, au Bénin, en
+          Cote d'Ivoire, au Burkina, au Niger, au Sénégal, au Mali et en France.
+          Nos confiseries sont disponibles en différents formats : dragées, babeluttes, papillotes, coffrets gourmands,
+          etc... idéals pour toutes les occasions.Que vous soyez amateur de bonbons traditionnels ou à la recherche de
+          nouvelles expériences gustatives, Tofidoux saura éveiller votre gourmandise. Laissez-vous tenter par nos
+          créations et succombez à la magie du caramel fondant !
+        </p>
+        <button class="aboutUs-button" id="btn-EnSavoirPlus"><a href="/pages/histoire.html">En Savoir Plus</a>
+
+        </button>
+      </div>
+    </div>
+    <!-- ----------------Section A propos--------------------------------------------->
+
+   <!--  ------------------------BOUTIQUE---------------------------------------- -->
+   <section class="shop-section">
+    <div class="container">
+        <h2>Notre Boutique</h2>
+        <p>Découvrez nos délicieuses créations artisanales, préparées avec amour et passion pour ravir vos papilles.</p>
+        <div class="shop-grid">
+            <div class="shop-item">
+                <img src="produit1.jpg" alt="Produit 1">
+                <h3>Bonbons Caramélisés</h3>
+                <p>Un mélange parfait de douceur et de croquant.</p>
+            </div>
+            <div class="shop-item">
+                <img src="produit2.jpg" alt="Produit 2">
+                <h3>Nougat Artisanal</h3>
+                <p>Une recette traditionnelle aux amandes et au miel.</p>
+            </div>
+            <div class="shop-item">
+                <img src="produit3.jpg" alt="Produit 3">
+                <h3>Caramels Fondants</h3>
+                <p>Une texture onctueuse et un goût inimitable.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--   -----------------------Histoire---------------------------------------- -->
+<section class="history-section">
+  <div class="container">
+      <div class="history-content">
+          <h2>Notre Histoire</h2>
+          <p>Tout a commencé avec une passion pour les douceurs artisanales. Depuis nos débuts, nous nous efforçons de créer des bonbons authentiques, faits avec amour et des ingrédients de qualité...</p>
+          <p>Nous avons parcouru un long chemin, mais notre mission reste la même : offrir des moments de bonheur à travers nos confiseries.</p>
+      </div>
+      <div class="history-image">
+          <img src="/images/Toffee.jpg" alt="Notre histoire">
+      </div>
+  </div>
+</section>
+
+
+<!-- ----------------------- fin Histoire---------------------------------------- -->
+  <!-- Vidéo -->
+  <section class="video" style="text-align: center;margin: 20px 100px;">
+    <div class="video-container">
+      <h2>Plongez dans l'univers TÔFIDOUX ! </h2>
+      <video controls>
+          <source src="/tofidoux.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture des vidéos.
+      </video>
+  </div>
+
+</section>
+<!-- --------------------------------AVIS---------------------------------------- --> 
+<section class="avis-container">
+  <div class="avis-card card1">
+      <img src="/images/avatar homme 1.jpg" alt="Avatar">
+      <h3>Fernand</h3>
+      <p>"L'équipe de Tofidoux est une valeur sûre. Ils sont ponctuels, professionnels et enthousiastes."</p>
+      <div class="stars">★★★★★</div>
+  </div>
+
+  <div class="avis-card card2">
+      <img src="/images/avatar homme 2.webp" alt="Avatar">
+      <h3>Happy AHANDESSI</h3>
+      <p>"Merci pour nous refaire vivre notre enfance à travers vos tofee !"</p>
+      <div class="stars">★★★★★</div>
+  </div>
+
+  <div class="avis-card card3">
+      <img src="/images/avatar femme1.jpg" alt="Avatar">
+      <h3>Beatrice TONOUKOUIN</h3>
+      <p>"Excellent Gout et saveurs uniques"</p>
+      <div class="stars">★★★★★</div>
+  </div>
+
+  <div class="avis-card card4">
+      <img src="/images/avatar homme 3.webp" alt="Avatar">
+      <h3>Charbel HADE</h3>
+      <p>Incroyable,je ne m'y attendais pas .J'ai adoré</p>
+      <div class="stars">★★★★★</div>
+  </div>
+</section>
+<!-- -----------------------AVIS----------------------------------------  -->
+
+
+  </main>
+
+  <!-- FIN MAIN BODY -->
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+    <div class="newsletter-section">
+      <h2>REJOIGNEZ-NOUS POUR NE RATER AUCUNE PROMOTION !</h2>
+      <p>Inscrivez votre adresse électronique ci-dessous:</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Entre ton addresse mail" required>
+        <button type="submit">S'abonner</button>
+      </form>
+    </div>
+
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Raccourcis</h3>
+        <ul>
+          <li><a href="/pages/acceuil.html">Accueil</a></li>
+          <li><a href="#">Boutique</a></li>
+          <li><a href="#">Nos produits</a></li>
+          <li><a href="/pages/catalogue.html">Actualité</a></li>
+          <li><a href="/pages/references.html">Références</a></li>
+          <li><a href="/pages/histoire.html">Notre histoire</a></li>
+          <li><a href="/pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contactez-nous</h3>
+        <ul>
+          <li> Tél: +229 0169260685</li>
+          <li><a href="mailto:tofidoux@gmail.com">E-mail: tofidoux@gmail.com</a></li>
+          <li>Adresse : <a href="https://www.google.com/maps/dir/6.369829,2.4900954/tofidoux+b%C3%A9nin+localisation+cotonou/@6.3395404,2.3198404,12z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x1023579291e2c3dd:0x231dfc768aaf7acc!2m2!1d2.3775583!2d6.3605586?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank">Tôfi doux, 996H+62M, Cotonou</a> 
+
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Nos horaires boutique</h3>
+        <p>Lundi au Samedi: 8h-20h</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="#">Conditions de vente</a></li>
+          <li><a href="/pages/mentions.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FIN FOOTER -->
+
+</html>
+</body>

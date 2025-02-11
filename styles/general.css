@@ -1,0 +1,413 @@
+*
+{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #FFD93D;
+    --accent-color: #6B4226;
+    --light-cream: #FFF5E6;
+    --dark-brown: #3D2C2E;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--light-cream);
+    /* background: #3D2C2E; */
+    color: var(--dark-brown);
+}
+
+
+/*------------------------------- NAVBAR -------------------------------*/
+
+/* NAVCONTAINER */
+
+header
+{
+  position: relative;
+  height: 70px;
+  margin-bottom: 0;
+}
+
+/* header nav .navc h1,header nav .navc a:hover {color: rgb(16, 116, 209);} */
+header nav .navc a {color: rgb(23, 54, 83); text-decoration: none; font-weight: bold;}
+/* header nav ul li {margin-right: 10px;} */
+
+header nav
+{
+  display: flex;
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 5%;
+  background-color: rgba(255, 255, 255, 0.20);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 6px 3px rgba(24, 24, 24, 0.13);
+  z-index: 1000;
+}
+
+header nav .nav
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+}
+
+header nav .navc
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+header nav .icones
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10px;
+}
+
+header nav .icones img
+{
+  cursor: pointer;
+}
+
+#menu_tôfi
+{
+  display: none;
+}
+
+/* ----DROPDOWN---- */
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  display: block;
+}
+
+/* Contenu du dropdown caché par défaut */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Style des liens du menu déroulant */
+.dropdown-content li {
+  list-style: none;
+  margin: 15px;
+  font-weight: 300;
+}
+
+.dropdown-content a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+/* Afficher le dropdown au survol */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* NAVLINKS */
+
+header ul li
+{
+  padding: 0 5px;
+}
+
+header ul li div
+{
+  position: relative;
+  width: 100%;
+}
+
+header ul li div a:hover ~ .form__bar{
+  left: 0;
+  right: 0;
+  width: 100%;
+  color: inherit;
+}
+
+.form__bar {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  width: 0;
+  display: block;
+  height: 1.6px;
+  background-color: rgb(23, 54, 83);
+  transition: all .5s;
+}
+
+p{color: aliceblue;}
+
+/* PANIER */
+
+header .conteneur_produit
+{
+  position: absolute;
+  top: 100%; right: -100%;
+  height: calc(100vh-11rem);
+  width: 25rem;
+  background-color: rgba(255, 255, 255, 0.20);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  padding: 1rem 1rem;
+  box-shadow: 0 0 6px 3px rgba(24, 24, 24, 0.13);
+}
+
+header .conteneur_produit .produit
+{
+  position: relative;
+  display: flex;
+  gap: 5rem;
+  padding: 1rem;
+  margin: 1rem 0 1rem 1rem;
+  align-items: center;
+  /* background-color: rgba(255, 255, 255, 0.20); */
+  background-color: #FFF5E6;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 6px 3px rgba(24, 24, 24, 0.13);
+}
+
+header .conteneur_produit .produit h3
+{
+  font-size: 1.5rem;
+  color: black;
+}
+----------------------------------------------------------------------------------------
+/* Style du panier */
+.panier {
+  position: fixed;
+  top: 0;
+  right: -350px; /* Masqué par défaut */
+  width: 300px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  padding: 20px;
+  z-index: 1000;
+}
+
+/* Affichage du panier */
+.panier.ouvert {
+  right: 0;
+}
+
+/* Style du header du panier */
+.panier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Bouton de fermeture */
+#fermer_panier {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.panier-contenu {
+  padding: 15px 0;
+}
+
+
+/*------------------------------- RESPONSIVITE NAVBAR -------------------------------*/
+
+@media screen and (max-width: 900px)
+{
+  header .navc
+  {
+    position:absolute;
+    top: 100%;
+    right: 0;
+    width: 30vw;
+    height: calc(100vh-11rem);
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.20);
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 6px 3px rgba(24, 24, 24, 0.13);
+    z-index: 1;
+  }
+  
+  header .navc li
+  {
+    margin: 1.5rem 0;
+  }
+
+  header .navc.active
+  {
+    right: 0;
+  }
+}
+
+/*------------------------------- BANNER -------------------------------*/
+
+
+
+/*------------------------------- FOOTER -------------------------------*/
+
+.site-footer {
+    background-color: black;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    border-top: 3px solid #444;
+  
+  }
+  
+  .newsletter-section {
+    text-align: center;
+    margin-bottom: 100px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 40px;
+  }
+  
+  .newsletter-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #F2ECF0;
+    font-family: cursive;
+  }
+  
+  .newsletter-section p {
+    margin-bottom: 20px;
+    font-size: larger;
+    
+  }
+  
+  .newsletter-form {
+    background-color: #F2ECF0 ;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .newsletter-form input {
+    padding: 12px 20px;
+    width: 300px;
+    border: none;
+    border-radius: 4px;
+    background: none;
+    outline: none;
+  }
+  
+  .newsletter-form input:hover {
+    border: 2px solid #BC6535;
+    border-radius: 2px;
+  }
+  
+  .newsletter-form button {
+    padding: 12px 25px;
+    background-color: #BC6535;
+    color: #F2ECF0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #d14b03;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 15px;
+  }
+  
+  .footer-column h3 {
+    color: #BC6535;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+    color: #F2ECF0;
+  }
+  
+  .footer-column ul li a {
+    color:#F2ECF0;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color:#F2ECF0;
+  }
+  
+  @media (max-width: 768px) {
+    .newsletter-form input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+  
+    .newsletter-form button {
+        width: 100%;
+    }
+  
+    .footer-column {
+        flex: 100%;
+        text-align: center;
+    }
+  }

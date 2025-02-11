@@ -1,0 +1,175 @@
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --caramel: #BC6535;
+    --doré: #E6AC5D;
+    --blanc-cassé: #F2ECF0;
+    --beige-caramel: #EED0C0;
+    --beige-doux: #E0D1CE;
+    --noir: #333;
+    --ombre: rgba(0, 0, 0, 0.15);
+}
+/* 🎨 Fond et mise en page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+background: #E6AC5D;
+}
+
+/* 💳 Conteneur principal */
+.container {
+    background: #F2ECF0;
+    padding: 30px;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+/* 🏷️ Titres */
+h2 {
+    color: #BC6535;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* 📝 Champs de formulaire */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #E0D1CE;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #BC6535;
+    box-shadow: 0 0 8px rgba(188, 101, 53, 0.5);
+}
+
+/* ✨ Effet flottant des labels */
+.input-group label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size: 14px;
+    color: #999;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    background: #F2ECF0;
+    padding: 0 5px;
+    color: #BC6535;
+    font-size: 12px;
+}
+
+/* 🎭 Animation des boutons */
+.prev-btn, .next-btn, .submit-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.prev-btn {
+    background: #E0D1CE;
+    color: #BC6535;
+}
+
+.next-btn {
+    background: #BC6535;
+    color: white;
+}
+
+.submit-btn {
+    background: #E6AC5D;
+    color: white;
+}
+
+.prev-btn:hover {
+    background: #BC6535;
+    color: white;
+}
+
+.next-btn:hover {
+    background: #E6AC5D;
+}
+
+.submit-btn:hover {
+    background: #BC6535;
+}
+
+/* 💰 Section des moyens de paiement */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #E0D1CE;
+}
+
+.payment-method img {
+    width: 30px;
+    height: auto;
+}
+
+.payment-method:hover {
+    background: #E6AC5D;
+    color: white;
+    border-color: #BC6535;
+}
+
+/* ✅ Page de confirmation */
+.home-btn {
+    background: #BC6535;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background: #E6AC5D;
+}

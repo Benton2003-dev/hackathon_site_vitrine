@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Références - Tofidoux</title>
+    <link rel="stylesheet" href="/styles/references.css">
+   
+</head>
+<body>
+    <header>
+        <h1>Nos Références</h1>
+        <p>Découvrez les commandes personnalisées réalisées pour divers événements.</p>
+    </header>
+    
+    <section class="references">
+        <div class="gallery">
+            <div class="image"><img src="img/mariage.jpg" alt="Mariage"></div>
+            <div class="image"><img src="img/anniversaire.jpg" alt="Anniversaire"></div>
+            <div class="image"><img src="img/bapteme.jpg" alt="Baptême"></div>
+            <div class="image"><img src="img/communion.jpg" alt="Communion"></div>
+            <div class="image"><img src="img/dot.jpg" alt="Dot"></div>
+            <div class="image"><img src="img/ceremonie.jpg" alt="Cérémonie de sortie"></div>
+        </div>
+    </section>
+    
+    <section class="commande">
+        <h2>Passer une commande personnalisée</h2>
+        <form>
+            <input type="text" name="nom" placeholder="Nom" required>
+            <input type="text" name="prenom" placeholder="Prénom" required>
+            <input type="text" name="pays" placeholder="Pays" required>
+            <input type="tel" name="tel" placeholder="Téléphone" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <select name="evenement" required>
+                <option value="">Type d'événement</option>
+                <option value="mariage">Mariage</option>
+                <option value="dot">Dot</option>
+                <option value="anniversaire">Anniversaire</option>
+                <option value="bapteme">Baptême</option>
+                <option value="communion">Communion</option>
+                <option value="autre">Autre</option>
+            </select>
+            <input type="date" name="date_evenement" required>
+            <select name="categorie_toffee" required>
+                <option value="">Catégorie de Tofee</option>
+                <option value="tofiPOP">TofiPOP</option>
+                <option value="tofiBLANC">TofiBLANC</option>
+                <option value="tofiFUN">TofiFUN</option>
+                <option value="tofiTABLETTE">TofiTABLETTE</option>
+            </select>
+            <input type="number" name="nombre_toffee" placeholder="Nombre de Tofee" required>
+            <textarea name="livraison" placeholder="Instructions de livraison" required></textarea>
+            <button type="submit">Commander</button>
+        </form>
+    </section>
+</body>
+</html>
